@@ -1,7 +1,7 @@
 The successor to https://github.com/xp2-882030kgz010602/tablegen.
 I *hope* that the code is actually readable this time.
 
-This table generator gives you the ability to specify whatever boards you want, with up to 14 tiles,
+This table generator gives you the ability to specify whatever boards you want, with up to 14 tiles and 255 moves,
 and table generation and AI play on any such board, optimized to satisfy any target function.
 This isn't restricted to boards that could "physically exist";
 moves can have tiles slide in ways that make no sense whatsoever.
@@ -133,7 +133,7 @@ fun main(){
 }
 ```
 Finally, let's try a 2x2x2 cube for a board. Despite the fact that three dimensions are needed to "properly" draw this board,
-we can still generate tables and see AI play on this board.
+we can still generate tables and see AI play on this board. Also of note is that this board has 6 moves instead of 4.
 ```kotlin
 import board.BoardHelper
 import tableGenDataStructures.SeedSet
