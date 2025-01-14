@@ -49,7 +49,7 @@ class BoardMovement{
     }
     /** `isLocked(board,columnIndices)` is `true` if no movement is possible in the column in either direction.
      * This is equivalent to but faster than checking
-     * `moveColumn(board,columnIndices)==board && moveColumn(board,columnIndices.reversed())==board`.
+     * `moveColumn(board,columnIndices)==board && moveColumn(board,columnIndices.reversedArray())==board`.
      * For example, if you had a board like `X ? ? ?` and didn't want to move the X tile,
      * then when moving right, you could check `isLocked(...,[0,1,2])`,
      * assuming that you are indexing tiles in reading order.
