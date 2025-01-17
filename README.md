@@ -25,6 +25,13 @@ pages (files containing boards with a given tile sum and data for said boards)
 cannot have data for more than 2^31-1 boards. I cannot do much about this,
 because Kotlin arrays can only be indexed by `Int`s.
 
+For larger tables, I heavily recommend using IntelliJ's "build to jar" option.
+There is a good tutorial on it here. https://www.jetbrains.com/help/idea/create-your-first-kotlin-app.html?section=IntelliJ%20build%20tool
+Both KotlinTableGen and IntelliJ are HUNGRY for resources, and being able to
+close out IntelliJ before running KotlinTableGen can make a real difference,
+and if IntelliJ freezes while running KotlinTableGen, you are not going to be able to check the output.
+Running KotlinTableGen outside of IntelliJ avoids all of this. I have never seen a command prompt freeze.
+
 Now, let's look at some examples.
 
 First, let's make a table for and have an AI play on a small 6-tile board.
