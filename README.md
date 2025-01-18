@@ -17,7 +17,7 @@ First example
 
 Second example
 2 2 2       _ 2 4       _ _ _
-2   2  R->  _   4  D->  _   4
+2 + 2  R->  _ + 4  D->  _ + 4
 2 2 2       _ 2 4       _ 4 8
 ```
 Another limitation that needs to be kept in mind with larger boards is that
