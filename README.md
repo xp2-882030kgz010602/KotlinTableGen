@@ -1,6 +1,8 @@
 The successor to https://github.com/xp2-882030kgz010602/tablegen.
 I *hope* that the code is actually readable this time.
 
+**KNOWN ISSUE: This thing uses WAY too much memory in general, and I don't have any clue why.**
+
 This table generator gives you the ability to specify whatever boards you want, with up to 14 tiles and 255 moves,
 and table generation and AI play on any such board, optimized to satisfy any target function.
 This isn't restricted to boards that could "physically exist";
