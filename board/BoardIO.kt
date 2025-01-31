@@ -55,9 +55,9 @@ class BoardIO{
       secondPass.close()
       return boards
     }
-    /** `iteratePageEntries(paths,sum,boardByteSize,function)` reads out all the entries in the page specified by the given paths and sum,
-     * and calls `function(board,probability,index)` on each entry. */
-    fun iteratePageEntries(paths:StringPair,sum:Int,boardByteSize:Int,function:(Long,Long,Int)->Unit){
+    /** `iteratePageEntries(paths,sum,boardByteSize,callback)` reads out all the entries in the page specified by the given paths and sum,
+     * and calls `callback(board,probability,index)` on each entry. */
+    fun iteratePageEntries(paths:StringPair,sum:Int,boardByteSize:Int,callback:(Long,Long,Int)->Unit){
       val listInput=getReader(paths.first,sum,"-list")
       val probabilityInput=getReader(paths.second,sum,"-chance")
       val indexInput=getReader(paths.second,sum,"-index")
@@ -71,7 +71,7 @@ class BoardIO{
         }
         val board=readData(listInput,boardByteSize)
         val probability=readData(probabilityInput,7)
-        function(board,probability,index)
+        callback(board,probability,index)
       }
     }
     /** `readSingleEntry(paths,sum,boardByteSize,board) is the pair consisting of the board probability for that board,
@@ -109,7 +109,7 @@ class BoardIO{
     }
     /** `formatTile(tile)` is a string representation of `tile`.
      * Precondition: `0L<=tile<16L` */
-    fun formatTile(tile:Int):String =
+    private fun formatTile(tile:Int):String =
       if(tile==0) "_"//Blank space
       else if(tile<10) (1 shl tile).toString()//2 to 512
       else if(tile==10) "1k"//1024
